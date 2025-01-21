@@ -11,17 +11,17 @@ export class WorldBankService {
     
   public loadWorldBank() {
     return this.http.get('https://api.worldbank.org/v2/country/?format=json&per_page=300', {
-      responseType: 'json'
+      responseType: 'json' 
     });
   }
 
-  public getCountryByCode(countryCode: string) {
+ /* public getCountryByCode(countryCode: string) {
     return this.http.get(`https://api.worldbank.org/v2/country/${countryCode}?format=json&per_page=300`, {
       responseType: 'json'
     });
-  }
+  } */
 
-  private mapWorldBankData(apiData: any[]): Country[] {
+  public mapWorldBankData(apiData: any[]): Country[] {
     
     const countryData = apiData[1];
 
