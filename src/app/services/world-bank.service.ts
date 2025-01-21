@@ -20,4 +20,18 @@ export class WorldBankService {
       responseType: 'json'
     });
   }
+
+  private mapWorldBankData(apiData: any[]): Country[] {
+    
+    const countryData = apiData[1];
+
+    return countryData.map((country: any) => ({
+      name: country.name || 'N/A',
+      capital: country.capitalCity || "N/A",
+      region: country.region.value || "N/A",
+      incomeLevel: country.incomeLevel.value || "N/A",
+      latitude: parseFloat(country.latitude) || "N/A",
+      longitude: parseFloat(country.longitude) || "N/A"
+    }));
+  }
 }

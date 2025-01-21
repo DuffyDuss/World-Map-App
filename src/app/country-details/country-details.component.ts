@@ -6,7 +6,7 @@ import { WorldBankService } from '../services/world-bank.service';
 @Component({
   selector: 'app-country-details',
   imports: [
-    MapComponent,
+  
   ],
   templateUrl: './country-details.component.html',
   styleUrl: './country-details.component.scss',
