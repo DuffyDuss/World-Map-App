@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './country-details.component.scss',
   standalone: true
 })
-export class CountryDetailsComponent {
+export class CountryDetailsComponent implements OnInit {
 
   constructor() {}
 
- 
+  ngOnInit(): void {
+    
+  }
 }
