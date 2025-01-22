@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CountryDetailsComponent } from "../country-details/country-details.component";
 import { MapService } from '../services/map.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-//import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-map',
   imports: [
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    CommonModule
   ],
   templateUrl: './map.component.html',
   styleUrl: './map.component.scss',
