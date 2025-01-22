@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Country } from '../models/country';
+//import { Country } from '../models/country';
 @Injectable({
   providedIn: 'root'
 
@@ -21,7 +21,7 @@ export class WorldBankService {
     });
   } */
 
-  public mapWorldBankData(apiData: any[]): Country[] {
+/*  public mapWorldBankData(apiData: any[]): Country[] {
     
     const countryData = apiData[1];
 
@@ -33,5 +33,5 @@ export class WorldBankService {
       latitude: parseFloat(country.latitude) || "N/A",
       longitude: parseFloat(country.longitude) || "N/A"
     }));
-  }
+  } */
 }

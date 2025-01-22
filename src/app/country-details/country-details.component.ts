@@ -20,8 +20,15 @@ export class CountryDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.worldBankService.loadWorldBank().subscribe({
       next: (response: any) => {
-        //console.log('All countries:', data);
-        this.countryData = this.worldBankService.mapWorldBankData(response);
+        this.countryData = response[1].map((country: any) => ({
+          name: country.name || 'N/A',
+          capital: country.capitalCity || "N/A",
+          region: country.region.value || "N/A",
+          incomeLevel: country.incomeLevel.value || "N/A",
+          latitude: parseFloat(country.latitude) || "N/A",
+          longitude: parseFloat(country.longitude) || "N/A"
+        }));
+
         console.log('Mapped data:', this.countryData);
       },
       error: (error) => {
