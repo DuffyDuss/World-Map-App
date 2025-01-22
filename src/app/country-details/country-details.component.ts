@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 //import { MapService } from '../services/map.service';
 import { WorldBankService } from '../services/world-bank.service';
 import { Country } from '../models/country';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-country-details',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './country-details.component.html',
   styleUrl: './country-details.component.scss',
   standalone: true
