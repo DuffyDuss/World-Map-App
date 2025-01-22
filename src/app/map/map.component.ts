@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { CountryDetailsComponent } from "../country-details/country-details.component";
 import { MapService } from '../services/map.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-map',
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MapComponent implements OnInit{
   svgContent: SafeHtml |undefined;
+  @Output()countrySelected = new EventEmitter<string>();
 
   constructor(
     private mapService: MapService,
@@ -48,6 +50,8 @@ export class MapComponent implements OnInit{
     paths.forEach(path => {
       path.addEventListener('mouseover', () => {
         path.setAttribute('style', 'fill: #d62f8b');
+        const countryID = path.getAttribute('id');
+        this.countrySelected.emit(countryID || '');
         //console.log('Entered Country:', path.getAttribute('id'));
       });
 
