@@ -1,1 +1,10 @@
-<p>country-details works!</p>
+<div class ="details">
+    <h2>Country Information</h2>
+
+    <p>Name: {{ countryData[0].name | titlecase }}</p>
+    <p>Capital: {{ countryData[0].capital }}</p>
+    <p>Region: {{countryData[0].region }}</p>
+    <p>Income Level: {{ countryData[0].incomeLevel | currency: 'USD' }}</p>
+    <p>Latitude: {{countryData[0].latitude }}</p>
+    <p>Longitude: {{countryData[0].longitude }}</p>
+</div>
