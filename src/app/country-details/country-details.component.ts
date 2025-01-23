@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 //import { MapComponent } from '../map/map.component';
 //import { MapService } from '../services/map.service';
 import { WorldBankService } from '../services/world-bank.service';
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CountryDetailsComponent implements OnInit {
   countryData: Country[] = [];
+  @Input() selectedCountry: string = '';
 
   constructor(private worldBankService: WorldBankService) {}
 
