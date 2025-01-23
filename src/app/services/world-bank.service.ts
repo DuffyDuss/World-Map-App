@@ -15,11 +15,11 @@ export class WorldBankService {
     });
   }
 
- /* public getCountryByCode(countryCode: string) {
+ public getCountryByCode(countryCode: string) {
     return this.http.get(`https://api.worldbank.org/v2/country/${countryCode}?format=json&per_page=300`, {
       responseType: 'json'
     });
-  } */
+  } 
 
 /*  public mapWorldBankData(apiData: any[]): Country[] {
     
