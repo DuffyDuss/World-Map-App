@@ -43,23 +43,18 @@ export class MapComponent implements OnInit{
 
   private svgInteractions(): void {
     const svg = document.querySelector('.map-column svg');
-    //console.log('SVG element', svg);
     if (svg){
       const paths = svg.querySelectorAll('path');
-      //console.log('First path element', paths[0]);
   
     paths.forEach(path => {
       path.addEventListener('mouseover', () => {
         path.setAttribute('style', 'fill: #d62f8b');
         const countryId = path.getAttribute('id');
         this.selectedCountryId = countryId || '';
-        //this.countrySelected.emit(countryId || '');
-        //console.log('Entered Country:', path.getAttribute('id'));
       });
 
       path.addEventListener('mouseleave', () => {
         path.setAttribute('style', '');
-        //console.log('Left Country:', path.getAttribute('id'));
       });
     });
     }
