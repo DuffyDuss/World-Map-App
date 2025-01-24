@@ -1,4 +1,9 @@
-<div class="no-data-message" *ngIf="countryData.length === 0">
+<div class="country-data-text" *ngIf="!selectedCountry">
+    <h2>Country Information</h2>
+    <p>Hover over area on the map</p>
+</div>
+
+<div class="no-data-message" *ngIf="countryData.length === 0 && selectedCountry">
     <p>No information available for this region</p>
     <p>Region is on world.svg file but not available from World Bank</p>
 </div>
