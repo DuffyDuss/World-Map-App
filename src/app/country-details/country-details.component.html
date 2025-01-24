@@ -6,6 +6,7 @@
 <div class="no-data-message" *ngIf="countryData.length === 0 && selectedCountry">
     <p>No information available for this region</p>
     <p>Region is on world.svg file but not available from World Bank</p>
+    <p><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/191133-why-are-some-data-not-available" target="_blank">Click Here</a>for details</p>
 </div>
 
 <div class="details" *ngIf="countryData.length > 0">
