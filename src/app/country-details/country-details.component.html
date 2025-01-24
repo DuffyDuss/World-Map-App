@@ -19,9 +19,9 @@
     <h2>Country Information</h2>
 
     <p>Name: {{ countryData[0].name | titlecase }}</p>
-    <p>Capital: {{ countryData[0].capital }}</p>
-    <p>Region: {{countryData[0].region }}</p>
-    <p>Income Level: {{ countryData[0].incomeLevel }}</p>
+    <p>Capital: {{ countryData[0].capital | titlecase }}</p>
+    <p>Region: {{countryData[0].region | uppercase }}</p>
+    <p>Income Level: {{ countryData[0].incomeLevel | titlecase }}</p>
     <p>Latitude: {{countryData[0].latitude }}</p>
     <p>Longitude: {{countryData[0].longitude }}</p>
     <cite>Data Source: <a href="https://www.worldbank.org" target="_blank">The World Bank</a>
