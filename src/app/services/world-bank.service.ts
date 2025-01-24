@@ -16,6 +16,7 @@ export class WorldBankService {
   }
 
  public getCountryByCode(countryCode: string) {
+    console.log('Getting country with code:', countryCode);
     return this.http.get(`https://api.worldbank.org/v2/country/${countryCode}?format=json&per_page=300`, {
       responseType: 'json'
     });
