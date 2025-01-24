@@ -1,4 +1,9 @@
-<div class ="details" *ngIf="countryData.length > 0">
+<div class="no-data-message" *ngIf="countryData.length === 0">
+    <p>No information available for this region</p>
+    <p>Region is on world.svg file but not available from World Bank</p>
+</div>
+
+<div class="details" *ngIf="countryData.length > 0">
     <h2>Country Information</h2>
 
     <p>Name: {{ countryData[0].name | titlecase }}</p>
