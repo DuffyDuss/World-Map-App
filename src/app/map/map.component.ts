@@ -29,15 +29,15 @@ export class MapComponent implements OnInit{
     this.mapService.loadSvgMap().subscribe({
       next: (svgContent) => {
         this.svgContent = this.sanitizer.bypassSecurityTrustHtml(svgContent);
-        console.log('SVG paths:', this.sanitizer.bypassSecurityTrustHtml(svgContent));
+        //console.log('SVG paths:', this.sanitizer.bypassSecurityTrustHtml(svgContent));
       setTimeout(() => this.svgInteractions(), 100);
       },
       error: (error) => {
         console.error('Error loading SVG:', error);
       },
-      complete: () => {
+      /*complete: () => {
         console.log('Completed');
-      }
+      }*/
     });
   }
 

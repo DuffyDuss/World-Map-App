@@ -29,10 +29,10 @@ export class CountryDetailsComponent implements OnChanges {
                 latitude: parseFloat(country.latitude) || "N/A",
                 longitude: parseFloat(country.longitude) || "N/A"
             }));
-            console.log('Updated country data:', this.countryData);
+            //console.log('Updated country data:', this.countryData);
           } else {
             this.countryData = [];
-            console.log('No data found for country:', this.selectedCountry);
+            //console.log('No data found for country:', this.selectedCountry);
           }
         },
 
