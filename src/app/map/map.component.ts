@@ -48,7 +48,7 @@ export class MapComponent implements OnInit{
   
     paths.forEach(path => {
       path.addEventListener('mouseover', () => {
-        path.setAttribute('style', 'fill: #d62f8b');
+        path.setAttribute('style', 'fill: #c5a572');
         const countryId = path.getAttribute('id');
         this.selectedCountryId = countryId || '';
       });
