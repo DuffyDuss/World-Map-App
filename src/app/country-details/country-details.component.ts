@@ -20,18 +20,25 @@ export class CountryDetailsComponent implements OnChanges {
       if (changes['selectedCountry'] && this.selectedCountry) {
         this.worldBankService.getCountryByCode(this.selectedCountry).subscribe({
           next: (response: any) => {
-            this.countryData = response[1].map((country: any) => ({
-              name: country.name || 'N/A',
-              capital: country.capitalCity || "N/A",
-              region: country.region.value || "N/A",
-              incomeLevel: country.incomeLevel.value || "N/A",
-              latitude: parseFloat(country.latitude) || "N/A",
-              longitude: parseFloat(country.longitude) || "N/A"
+            if (response[1] && response[1].length > 0) {
+              this.countryData = response[1].map((country: any) => ({
+                name: country.name || 'N/A',
+                capital: country.capitalCity || "N/A",
+                region: country.region.value || "N/A",
+                incomeLevel: country.incomeLevel.value || "N/A",
+                latitude: parseFloat(country.latitude) || "N/A",
+                longitude: parseFloat(country.longitude) || "N/A"
             }));
             console.log('Updated country data:', this.countryData);
-          },
+          } else {
+            this.countryData = [];
+            console.log('No data found for country:', this.selectedCountry);
+          }
+        },
+
         error: (error) => {
           console.log('Error:', error);
+          this.countryData = [];
         }
       });
     }
