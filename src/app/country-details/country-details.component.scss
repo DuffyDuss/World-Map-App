@@ -1,0 +1,28 @@
+.details, .country-data-text, .no-data-message  {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+    box-shadow: 0 2px 4px rbg(0 0 0 / 10%);
+}
+
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #2e5339;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+cite {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666666;
+    font-style: italic;
+}
